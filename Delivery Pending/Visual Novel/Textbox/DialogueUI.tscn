@@ -1,0 +1,18 @@
+[gd_scene format=2]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -428.0
+margin_bottom = -50.0
+
+[node name="MainText" type="RichTextLabel" parent="."]
+margin_right = 1920.0
+margin_bottom = 27.0
+rect_min_size = Vector2( 800, 0 )
+rect_clip_content = false
+bbcode_enabled = true
+bbcode_text = "hehenhfghkl jfdlkhj dflkgjh ldkfjh lkfdjhl kdf jhlk fdglk;h fldkh lk fdhlkd flkh flkghj lfkgh lkdfg hlkdfjh lkfdgh lfjdgh ldfghlk [wave]fdjghlkfghl flghkjlfghh [/wave] jkfglhkjlf gkjhjfk"
+text = "hehenhfghkl jfdlkhj dflkgjh ldkfjh lkfdjhl kdf jhlk fdglk;h fldkh lk fdhlkd flkh flkghj lfkgh lkdfg hlkdfjh lkfdgh lfjdgh ldfghlk fdjghlkfghl flghkjlfghh  jkfglhkjlf gkjhjfk"
+fit_content_height = true
