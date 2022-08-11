@@ -1,18 +1,67 @@
-[gd_scene format=2]
+[gd_scene load_steps=6 format=2]
 
-[node name="VBoxContainer" type="VBoxContainer"]
+[ext_resource path="res://Assets/Fonts/IndieFlower-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Visual Novel/Textbox/DialogueUI.cs" type="Script" id=2]
+
+[sub_resource type="Gradient" id=1]
+interpolation_mode = 1
+offsets = PoolRealArray( 0.206704, 0.748603, 1 )
+colors = PoolColorArray( 0.111214, 0.131851, 0.441406, 1, 0.341797, 0.0133514, 0.194253, 1, 0.927734, 0.251865, 0.410272, 1 )
+
+[sub_resource type="GradientTexture2D" id=2]
+gradient = SubResource( 1 )
+width = 1920
+height = 380
+use_hdr = true
+fill = 1
+fill_from = Vector2( 0.254167, 0.126649 )
+fill_to = Vector2( 0.795833, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+font_data = ExtResource( 1 )
+
+[node name="DialogueUi" type="Panel"]
+self_modulate = Color( 1, 1, 1, 0.266667 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -428.0
 margin_bottom = -50.0
+script = ExtResource( 2 )
+
+[node name="ClippingControl" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_clip_content = true
+__meta__ = {
+"_editor_description_": "Here to clip the TextureRect below to fit within the alotted area."
+}
+
+[node name="TextureRect" type="TextureRect" parent="ClippingControl"]
+modulate = Color( 1, 1, 1, 0.529412 )
+margin_right = 1920.0
+margin_bottom = 400.0
+texture = SubResource( 2 )
 
 [node name="MainText" type="RichTextLabel" parent="."]
-margin_right = 1920.0
-margin_bottom = 27.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 30.0
+margin_right = -50.0
 rect_min_size = Vector2( 800, 0 )
 rect_clip_content = false
+custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
-bbcode_text = "hehenhfghkl jfdlkhj dflkgjh ldkfjh lkfdjhl kdf jhlk fdglk;h fldkh lk fdhlkd flkh flkghj lfkgh lkdfg hlkdfjh lkfdgh lfjdgh ldfghlk [wave]fdjghlkfghl flghkjlfghh [/wave] jkfglhkjlf gkjhjfk"
-text = "hehenhfghkl jfdlkhj dflkgjh ldkfjh lkfdjhl kdf jhlk fdglk;h fldkh lk fdhlkd flkh flkghj lfkgh lkdfg hlkdfjh lkfdgh lfjdgh ldfghlk fdjghlkfghl flghkjlfghh  jkfglhkjlf gkjhjfk"
+bbcode_text = "And with the great event that occurred not too long ago... I felt the [tornado]need[/tornado] to [shake]achieve the best[/shake] that I could. [wave]AHHH!![/wave] Here we go..."
+text = "And with the great event that occurred not too long ago... I felt the need to achieve the best that I could. AHHH!! Here we go..."
 fit_content_height = true
+
+[node name="Character" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Character Name" type="RichTextLabel" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
