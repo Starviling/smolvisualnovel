@@ -7,10 +7,13 @@ namespace Visual_Novel.Textbox
     {
         public String text;
         public LineCharacter character;
-        public LineInformation(String text, LineCharacter character)
+        public float timeSec;
+        public LineInformation(String text, LineCharacter character) : this(text, character, 0.039f) { }
+        public LineInformation(String text, LineCharacter character, float timeSec)
         {
             this.text = text;
             this.character = character;
+            this.timeSec = timeSec;
         }
     }
 
