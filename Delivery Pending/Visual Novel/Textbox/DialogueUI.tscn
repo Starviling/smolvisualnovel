@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Fonts/IndieFlower-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Visual Novel/Textbox/DialogueUI.cs" type="Script" id=2]
+[ext_resource path="res://Visual Novel/Textbox/Bobbing.gd" type="Script" id=3]
 
 [sub_resource type="Gradient" id=1]
 interpolation_mode = 1
@@ -53,9 +54,11 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Arrow Indicator" type="Polygon2D" parent="ClippingControl/Control"]
+modulate = Color( 1, 1, 1, 0 )
 color = Color( 0.796078, 0.764706, 0.764706, 1 )
 polygon = PoolVector2Array( 0, 0, 30, 60, 60, 0 )
 uv = PoolVector2Array( 0, 0, 30, 60, 60, 0 )
+script = ExtResource( 3 )
 
 [node name="MainText" type="RichTextLabel" parent="."]
 anchor_right = 1.0
@@ -81,3 +84,6 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="LineTimer" type="Timer" parent="."]
+
+[connection signal="BeginNextLine" from="." to="ClippingControl/Control/Arrow Indicator" method="_on_DialogueUi_BeginNextLine"]
+[connection signal="LineDelivered" from="." to="ClippingControl/Control/Arrow Indicator" method="_on_DialogueUi_LineDelivered"]

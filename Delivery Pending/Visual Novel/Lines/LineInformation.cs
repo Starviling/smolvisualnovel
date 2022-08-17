@@ -1,7 +1,7 @@
 ﻿using System;
 using Godot;
 
-namespace Visual_Novel.Textbox
+namespace Visual_Novel.Lines
 {
     public struct LineInformation
     {
