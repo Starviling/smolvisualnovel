@@ -8,7 +8,7 @@ public class DialogueUI : Panel
     #region Variables
     [Export]
     // Main Text Name
-    public String mainTextName = "MainText";
+    public String MainTextName = "MainText";
     private RichTextLabel mainText;
 
     private Timer lineTimer;
@@ -24,17 +24,11 @@ public class DialogueUI : Panel
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        mainText = GetNode<RichTextLabel>(mainTextName);
+        mainText = GetNode<RichTextLabel>(MainTextName);
         //lineTimer = GetNode<Timer>(lineTimerName);
         lineTimer = new Timer();
         lineTimer.Connect("timeout", this, nameof(RevealChar));
         AddChild(lineTimer);
-
-        #region Test code
-        line = new LineInformation("And with the great event that occurred not too long ago... I felt the [tornado][rainbow]need[/rainbow][/tornado] to [shake]achieve the best[/shake] that I could. [wave]AHHH!![/wave] Here we go...",
-            new LineCharacter());
-        NextLine(line);
-        #endregion
     }
 
     // Make sure everything is clean
@@ -42,22 +36,38 @@ public class DialogueUI : Panel
     {
         base._ExitTree();
         lineTimer.Stop();
-        lineTimer.Dispose();
+        lineTimer.QueueFree();
     }
 
-    // Indicates that the nextline is being delivered. Triggered upon click
-    public void NextLine(LineInformation line)
+    /// <summary>
+    /// Determines if the DialogueUI is ready to deliver the next line
+    /// </summary>
+    /// <returns></returns>
+    public bool ReadyToDeliver()
+    {
+        return lineTimer.IsStopped();
+    }
+
+    /// <summary>
+    /// Begins the loop for the next line being displayed. Emits BeginNextLine signal
+    /// upon start.
+    /// </summary>
+    /// <param name="line"></param>
+    public void NextLineInstruction(LineInformation line)
     {
         this.line = line;
         mainText.VisibleCharacters = 0;
-        mainText.BbcodeText = line.text;
+        mainText.BbcodeText = line.Text;
 
-        lineTimer.WaitTime = line.timeSec;
+        lineTimer.WaitTime = line.TimeSec;
         EmitSignal(nameof(BeginNextLine));
         lineTimer.Start();
     }
 
-    // This is connected to the timer timeout and loops until all characters are shown
+    /// <summary>
+    /// Connected to timer timeout and loops until all characters are shown. Emits
+    /// LineDelivered signal upon completion.
+    /// </summary>
     public void RevealChar()
     {
         mainText.VisibleCharacters++;
@@ -71,21 +81,24 @@ public class DialogueUI : Panel
         switch (mainText.Text[mainText.VisibleCharacters])
         {
             case '.':
-                lineTimer.WaitTime = line.timeSec + 0.5f;
+                lineTimer.WaitTime = line.TimeSec + 0.5f;
                 break;
             case '?':
-                lineTimer.WaitTime = line.timeSec + 0.85f;
+                lineTimer.WaitTime = line.TimeSec + 0.85f;
                 break;
             case '!':
-                lineTimer.WaitTime = line.timeSec + 0.395f;
+                lineTimer.WaitTime = line.TimeSec + 0.395f;
                 break;
             default:
-                lineTimer.WaitTime = line.timeSec;
+                lineTimer.WaitTime = line.TimeSec;
                 break;
         }
         
     }
-    // For when the player wants to go fast
+
+    /// <summary>
+    /// Reveals all text and emits LineDelivered signal indicating completion of line.
+    /// </summary>
     public void RevealAll()
     {
         mainText.PercentVisible = 1;

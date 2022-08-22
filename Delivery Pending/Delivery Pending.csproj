@@ -3,4 +3,9 @@
     <TargetFramework>net472</TargetFramework>
     <RootNamespace>DeliveryPending</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json">
+      <Version>6.0.5</Version>
+    </PackageReference>
+  </ItemGroup>
 </Project>
