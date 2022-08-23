@@ -12,7 +12,7 @@ colors = PoolColorArray( 0.111214, 0.131851, 0.441406, 1, 0.341797, 0.0133514, 0
 [sub_resource type="GradientTexture2D" id=2]
 gradient = SubResource( 1 )
 width = 1920
-height = 380
+height = 383
 use_hdr = true
 fill = 1
 fill_from = Vector2( 0.254167, 0.126649 )
@@ -26,7 +26,7 @@ font_data = ExtResource( 1 )
 self_modulate = Color( 1, 1, 1, 0.266667 )
 anchor_top = 0.6
 anchor_right = 1.0
-anchor_bottom = 0.94
+anchor_bottom = 0.955
 script = ExtResource( 2 )
 
 [node name="ClippingControl" type="Control" parent="."]

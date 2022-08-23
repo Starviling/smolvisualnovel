@@ -8,14 +8,13 @@ namespace Visual_Novel.Scenery
     public class CrossFadeCommand : SceneEffectCommand
     {
         private string resourcePathTrans;
-        private int FadeTime;
 
         /// <summary>
         /// Crossfades the active scene with a new background.
         /// </summary>
         /// <param name="resourcePathTrans"></param>
         /// <param name="fadeTime"></param>
-        public CrossFadeCommand(string resourcePathTrans, int fadeTime = 2)
+        public CrossFadeCommand(string resourcePathTrans, float fadeTime = 2f)
         {
             this.resourcePathTrans = resourcePathTrans;
             this.FadeTime = fadeTime;
@@ -42,13 +41,11 @@ namespace Visual_Novel.Scenery
     /// </summary>
     public class FadeToBlackCommand : SceneEffectCommand
     {
-        private int FadeTime;
-
         /// <summary>
         /// Crossfades the active scene with a new background.
         /// </summary>
         /// <param name="fadeTime"></param>
-        public FadeToBlackCommand(int fadeTime = 2)
+        public FadeToBlackCommand(float fadeTime = 2f)
         {
             this.FadeTime = fadeTime;
         }

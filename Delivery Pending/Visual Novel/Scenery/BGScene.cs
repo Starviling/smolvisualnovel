@@ -16,6 +16,15 @@ public class BGScene : Node2D
 
     public void NextLineInstruction(LineInformation line)
     {
+        GD.Print("Test");
+        if (line == null)
+        {
+            GD.Print("NULL");
+        }
+        if (line.sceneEffectCommand == null)
+        {
+            GD.Print("Scene NULL");
+        }
         line.sceneEffectCommand?.ExecuteCommand(bGSceneTween);
     }
 }

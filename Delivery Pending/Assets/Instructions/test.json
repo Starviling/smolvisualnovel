@@ -1,0 +1,21 @@
+{
+  "instructions":[
+    {
+      "mainText": "And with the great event that occurred not too long ago... I felt the need to achieve the best that I could. AHHH!! Here we go...",
+      "sceneEffect": {
+        "fadeTime": 2,
+        "type": "fadeblack"
+      }
+    },
+    {
+      "mainText": "And with the great event that occurred not too long ago... I felt the [tornado][rainbow]need[/rainbow][/tornado] to [shake]achieve the best[/shake] that I could. [wave]AHHH!![/wave] Here we go...",
+      "character": "",
+      "sceneEffect": {
+        "fadeTime": 2,
+        "type": "crossfade",
+        "path": "res://Assets/Images/TalkingSelf.PNG"
+      },
+      "timeSec": 0.1
+    }
+  ]
+}

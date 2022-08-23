@@ -1,8 +1,10 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Visual_Novel.Lines;
 using Visual_Novel.Scenery;
+using Visual_Novel.Textbox;
 //using Visual_Novel.Textbox;
 
 public class UserInterface : CanvasLayer
@@ -11,6 +13,11 @@ public class UserInterface : CanvasLayer
     [Export]
     public string DialogueUIName = "DialogueUI";
     private DialogueUI dialogueBox;
+    [Export]
+    public string instructionsFilePath;
+    private List<LineInformation> instructions;
+
+    private int indexInstruction;
 
     #region DialogueUI Signals
     [Signal]
@@ -24,17 +31,21 @@ public class UserInterface : CanvasLayer
     public override void _Ready()
     {
         dialogueBox = GetNode<DialogueUI>(DialogueUIName);
+        instructions = TextParser.ParseFile(instructionsFilePath);
+        indexInstruction = 0;
     }
 
     public void NextLine()
     {
-        SceneEffectCommand test = new CrossFadeCommand("res://Assets/Images/TalkingSelf.PNG");
-        LineInformation nextLine = new LineInformation("And with the great event that occurred not too long ago... I felt the [tornado][rainbow]need[/rainbow][/tornado] to [shake]achieve the best[/shake] that I could. [wave]AHHH!![/wave] Here we go...", null, 0.039f, test);
-        //TextParser.PrintSerializedJSON(test);
+        if (indexInstruction >= instructions.Count)
+            // TODO: Handle completion of a file
+            return;
+        LineInformation nextLine = instructions[indexInstruction];
         // Access parsed information and emit signals based on parsed instructions
         if (dialogueBox.ReadyToDeliver())
         {
             EmitSignal(nameof(NextInstructionSignal), nextLine);
+            indexInstruction++;
         }
         else
         {
@@ -42,8 +53,6 @@ public class UserInterface : CanvasLayer
             // Start a cooldown on delivering line
         }
     }
-
-    
 
     public override void _UnhandledInput(InputEvent @event)
     {

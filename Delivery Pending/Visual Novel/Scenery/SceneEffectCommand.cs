@@ -5,6 +5,8 @@
     /// </summary>
     public abstract class SceneEffectCommand
     {
+        public float FadeTime { get; protected set; }
+
         /// <summary>
         /// Executes the command using the given TransitionTween.
         /// </summary>

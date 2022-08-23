@@ -6,6 +6,7 @@
 
 [node name="UserInterface" type="CanvasLayer"]
 script = ExtResource( 3 )
+instructionsFilePath = "res://Assets/Instructions/test.json"
 
 [node name="BGScene" parent="." instance=ExtResource( 2 )]
 
