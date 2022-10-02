@@ -8,9 +8,26 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "JSONResource",
+"language": "GDScript",
+"path": "res://addons/custom_resource/json_resource.gd"
+}, {
+"base": "ResourceFormatLoader",
+"class": "JSONResourceLoader",
+"language": "GDScript",
+"path": "res://addons/custom_resource/json_resource_loader.gd"
+} ]
+_global_script_class_icons={
+"JSONResource": "",
+"JSONResourceLoader": ""
+}
+
 [application]
 
 config/name="Delivery Pending"
+run/main_scene="res://Visual Novel/Main Menu.tscn"
 config/icon="res://icon.png"
 
 [display]

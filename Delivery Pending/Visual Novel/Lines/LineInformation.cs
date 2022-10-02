@@ -1,5 +1,6 @@
 ﻿using System;
 using Godot;
+using Visual_Novel.Audio;
 using Visual_Novel.Scenery;
 
 namespace Visual_Novel.Lines
@@ -13,21 +14,25 @@ namespace Visual_Novel.Lines
         public String Text { get; private set; }
         public LineCharacter Character { get; private set; }
         public float TimeSec { get; private set; }
-        public SceneEffectCommand sceneEffectCommand { get; private set; }
+        public SceneEffectCommand SceneCommand { get; private set; }
+        public AudioStreamCommand AudioCommand { get; private set; }
 
         /// <summary>
         /// Constructor for storing line information. Used when delivering lines.
         /// </summary>
         /// <param name="text">The text to be displayed on the line.</param>
-        /// <param name="character">The character that is currently talking.</param>
         /// <param name="timeSec">The time in seconds between each character being displayed.</param>
+        /// <param name="character">The character that is currently talking.</param>
         /// <param name="sceneEffect">The SceneEffectCommand to execute from the given line.</param>
-        public LineInformation(String text, LineCharacter character, float timeSec = 0.039f, SceneEffectCommand sceneEffect = null)
+        /// <param name="audioStream">The AudioStreamCommand to execute from the given line.</param>
+        public LineInformation(String text, float timeSec = 0.039f, LineCharacter character = null, 
+            SceneEffectCommand sceneEffect = null, AudioStreamCommand audioStream = null)
         {
             this.Text = text;
-            this.Character = character;
             this.TimeSec = timeSec;
-            this.sceneEffectCommand = sceneEffect;
+            this.Character = character;
+            this.SceneCommand = sceneEffect;
+            this.AudioCommand = audioStream;
         }
     }
 

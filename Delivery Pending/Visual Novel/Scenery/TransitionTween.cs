@@ -6,8 +6,12 @@ public class TransitionTween : Tween
 {
     #region Variables
     // Nodes containing the scenery.
-    public Node NodeActive { get; private set; }
-    public Node NodeTransitionary { get; private set; }
+    [Export]
+    public string NodeActiveName = "SceneA";
+    public TextureRect NodeActive { get; private set; }
+    [Export]
+    public string NodeTransitionaryName = "SceneB";
+    public TextureRect NodeTransitionary { get; private set; }
 
     [Export]
     public Texture BlackTexture;
@@ -20,8 +24,8 @@ public class TransitionTween : Tween
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        NodeActive = GetNode<Node>("SceneA");
-        NodeTransitionary = GetNode<Node>("SceneB");
+        NodeActive = GetNode<TextureRect>(NodeActiveName);
+        NodeTransitionary = GetNode<TextureRect>(NodeTransitionaryName);
     }
 
     /// <summary>

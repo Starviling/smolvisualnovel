@@ -1,0 +1,177 @@
+{
+  "instructions":[
+    {
+      "text": "Mmmm... Nice! Looks like the package should be arriving today. I can finally put my PC together!",
+      "sceneCommand": {
+        "fadeTime": 2,
+        "type": "fadeBlack"
+      }
+    },
+    {
+      "text": "I've been holding onto all the other parts for [shake level=10]months[/shake] now... You have [shake]NO[/shake] idea how much trouble I went through to get this.",
+      "sceneCommand": {
+        "fadeTime": 5,
+        "type": "crossFade",
+        "path": "res://Assets/Images/Day/DayClosed.png"
+      },
+      "audioCommand": {
+        "type": "quickFade",
+        "path": "res://Assets/Music/Flowers_at_night.mp3"
+      }
+    },
+    {
+      "text": "I spent months scouring articles, forums, and streams just to land the opportunity to purchase it."
+    },
+    {
+      "text": "[fade start=12 length=105]Stupid scalpers making me waste so much time. Can't believe I spent so much of my life looking at an alarm...[/fade]"
+    },
+    {
+      "text": "Just thinking of having to pay a marked up price of a couple grand is revolting!! How do they have the conscience to do such a thing?"
+    },
+    {
+      "text": "[color=fuchsia]*Sigh*[/color] - Scrolling through and looking at these prices again is enough to infuriate me.",
+      "sceneCommand": {
+        "fadeTime": 2,
+        "type": "crossFade",
+        "path": "res://Assets/Images/Day/Guy/DayClosedPhoneGuy.png"
+      },
+      "timeSec": 0.07
+    },
+    {
+      "text": "..."
+    },
+    {
+      "text": ". . .",
+      "timeSec": 0.3
+    },
+    {
+      "text": "Seems like I have a good amount of time until the package arrives - the day has just started after all."
+    },
+    {
+      "text": "I should take care of some of the chores I've been putting off."
+    },
+    {
+      "text": "[color=yellow]*Sometime later*[/color]",
+      "sceneCommand": {
+        "fadeTime": 3,
+        "type": "fadeBlack"
+      },
+      "audioCommand": {
+        "type": "silentFade"
+      },
+      "timeSec": 0.125
+    },
+    {
+      "text": "Annnyyyy second now... Mailman should be coming by around this time.",
+      "sceneCommand": {
+        "fadeTime": 2,
+        "type": "crossFade",
+        "path": "res://Assets/Images/Day/Guy/DayWindowGuy.png"
+      },
+      "audioCommand": {
+        "type": "quickFade",
+        "path": "res://Assets/Music/Flowers_at_night.mp3"
+      },
+      "timeSec": 0.1
+    },
+    {
+      "text": "There he is!"
+    },
+    {
+      "text": ". . .",
+      "sceneCommand": {
+        "fadeTime": 2,
+        "type": "crossFade",
+        "path": "res://Assets/Images/Day/Day.png"
+      },
+      "timeSec": 0.3
+    },
+    {
+      "text": "... No mail for me...",
+      "sceneCommand": {
+        "fadeTime": 2,
+        "type": "crossFade",
+        "path": "res://Assets/Images/Day/Guy/DayWindowGuy.png"
+      },
+      "timeSec": 0.15
+    },
+    {
+      "text": "Maybe they're shipping it through a different carrier?"
+    },
+    {
+      "text": "[color=yellow]*Sometime later*[/color]",
+      "sceneCommand": {
+        "fadeTime": 3,
+        "type": "fadeBlack"
+      },
+      "audioCommand": {
+        "type": "silentFade"
+      },
+      "timeSec": 0.125
+    },
+    {
+      "text": "It's getting late now... [color=fuchsia]*Sigh*[/color] - Guess I shouldn't trust delivery times...",
+      "sceneCommand": {
+        "fadeTime": 2,
+        "type": "crossFade",
+        "path": "res://Assets/Images/Night/Guy/NightWindowGuy.png"
+      },
+      "audioCommand": {
+        "type": "quickFade",
+        "path": "res://Assets/Music/Flowers_at_night.mp3"
+      }
+    },
+    {
+      "text": "[fade start=12 length=93]Don't count on anything being on time I guess... [shake level=10]Especially[/shake] when you are looking forward to it.[/fade]"
+    },
+    {
+      "text": "Can't believe I spent [shake]all day[/shake] waiting for a package that didn't arrive.",
+      "sceneCommand": {
+        "fadeTime": 2,
+        "type": "crossFade",
+        "path": "res://Assets/Images/Night/NightClosed.png"
+      }
+    },
+    {
+      "text": "[color=red]DAY 1 - THE DELIVERY DID NOT ARRIVE[/color]",
+      "sceneCommand": {
+        "fadeTime": 3,
+        "type": "fadeBlack"
+      },
+      "timeSec": 0.125
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+      "text": "...",
+      "sceneCommand": {
+        "fadeTime": 2,
+        "type": "fadeBlack"
+      },
+      "timeSec": 0.125
+    },
+    {
+      "text": "Ugh - Why haven't I put up blinds in my own room yet?"
+    },
+    {
+      "text": ""
+    }
+    
+  ]
+
+}

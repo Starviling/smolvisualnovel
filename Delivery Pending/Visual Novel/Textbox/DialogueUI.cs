@@ -55,6 +55,8 @@ public class DialogueUI : Panel
     /// <param name="line"></param>
     public void NextLineInstruction(LineInformation line)
     {
+        if (line == null || line.Text == null)
+            return;
         this.line = line;
         mainText.VisibleCharacters = 0;
         mainText.BbcodeText = line.Text;
@@ -80,8 +82,14 @@ public class DialogueUI : Panel
         // Change the timer wait to suit the character being displayed
         switch (mainText.Text[mainText.VisibleCharacters])
         {
+            case ',':
+                lineTimer.WaitTime = line.TimeSec + 0.45f;
+                break;
             case '.':
                 lineTimer.WaitTime = line.TimeSec + 0.5f;
+                break;
+            case '-':
+                lineTimer.WaitTime = line.TimeSec + 0.85f;
                 break;
             case '?':
                 lineTimer.WaitTime = line.TimeSec + 0.85f;

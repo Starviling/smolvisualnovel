@@ -66,10 +66,12 @@ margin_top = 30.0
 margin_right = -50.0
 rect_min_size = Vector2( 800, 0 )
 rect_clip_content = false
+custom_fonts/mono_font = SubResource( 3 )
+custom_fonts/bold_italics_font = SubResource( 3 )
+custom_fonts/italics_font = SubResource( 3 )
+custom_fonts/bold_font = SubResource( 3 )
 custom_fonts/normal_font = SubResource( 3 )
 bbcode_enabled = true
-bbcode_text = "And with the great event that occurred not too long ago... I felt the [tornado][rainbow]need[/rainbow][/tornado] to [shake]achieve the best[/shake] that I could. [wave]AHHH!![/wave] Here we go..."
-text = "And with the great event that occurred not too long ago... I felt the need to achieve the best that I could. AHHH!! Here we go..."
 fit_content_height = true
 scroll_active = false
 
@@ -80,6 +82,12 @@ margin_bottom = 40.0
 [node name="Character Name" type="RichTextLabel" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+custom_fonts/mono_font = SubResource( 3 )
+custom_fonts/bold_italics_font = SubResource( 3 )
+custom_fonts/italics_font = SubResource( 3 )
+custom_fonts/bold_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 3 )
+scroll_active = false
 
 [node name="LineTimer" type="Timer" parent="."]
 

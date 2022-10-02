@@ -1,21 +1,66 @@
 {
   "instructions":[
     {
-      "mainText": "And with the great event that occurred not too long ago... I felt the need to achieve the best that I could. AHHH!! Here we go...",
-      "sceneEffect": {
+      "text": "Here is the first line that we are delivering to the dialogue.",
+      "sceneCommand": {
         "fadeTime": 2,
-        "type": "fadeblack"
+        "type": "fadeBlack"
+      },
+      "audioCommand": {
+        "type": "quickFade",
+        "path": "res://Assets/Music/08. The Guests - Kan Gao.mp3"
       }
     },
     {
-      "mainText": "And with the great event that occurred not too long ago... I felt the [tornado][rainbow]need[/rainbow][/tornado] to [shake]achieve the best[/shake] that I could. [wave]AHHH!![/wave] Here we go...",
+      "text": "And here is the great the second event that is being delivered... I felt the [tornado][rainbow]need[/rainbow][/tornado] to [shake]implement it this way[/shake] just so I could. [wave]AHHH!![/wave] Here we go...",
       "character": "",
-      "sceneEffect": {
-        "fadeTime": 2,
-        "type": "crossfade",
+      "sceneCommand": {
+        "fadeTime": 5,
+        "type": "crossFade",
         "path": "res://Assets/Images/TalkingSelf.PNG"
       },
+      "audioCommand": {
+        "type": "quickFade",
+        "path": "res://Assets/Music/08. The Guests - Kan Gao.mp3"
+      },
       "timeSec": 0.1
+    },
+    {
+      "text": "And here is the great the second event that is being delivered... I felt the [tornado][rainbow]need[/rainbow][/tornado] to [shake]implement it this way[/shake] just so I could. [wave]AHHH!![/wave] Here we go...",
+      "character": "",
+      "sceneCommand": {
+        "fadeTime": 5,
+        "type": "crossFade",
+        "path": "res://Assets/Images/TestBackground.png"
+      },
+      "audioCommand": {
+        "type": "quickFade",
+        "path": "res://Assets/Music/08. The Guests - Kan Gao.mp3"
+      },
+      "timeSec": 0.1
+    },
+    {
+      "text": "And here is the great the second event that is being delivered... I felt the [tornado][rainbow]need[/rainbow][/tornado] to [shake]implement it this way[/shake] just so I could. [wave]AHHH!![/wave] Here we go...",
+      "character": "",
+      "sceneCommand": {
+        "fadeTime": 1,
+        "type": "fadeBlack"
+      },
+      "timeSec": 0.1
+    },
+    {
+      "text": "Single line text."
+    },
+    {
+      "text": "More stuff to do here with the dialogue.",
+      "audioCommand": {
+        "type": "quickFade",
+        "path": "res://Assets/Music/08. The Guests - Kan Gao.mp3"
+      }
+    },
+    {
+      "text": "Babooey amongus sussy imposter baka is when there among us drip gang.[tornado][shake]WHEEEEEEEEEEEEE[/shake][/tornado]!",
+      "timeSec": 1
     }
   ]
 }

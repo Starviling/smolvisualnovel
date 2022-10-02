@@ -26,6 +26,8 @@ namespace Visual_Novel.Scenery
         public override void ExecuteCommand(TransitionTween BGSceneTween)
         {
             BGSceneTween.RemoveAll();
+            BGSceneTween.NodeActive.Modulate = new Color(1, 1, 1, 1);
+            BGSceneTween.NodeTransitionary.Modulate = new Color(1, 1, 1, 0);
 
             // Assuming nodeB is a TextureRect
             ((TextureRect)BGSceneTween.NodeTransitionary).Texture = (Texture)GD.Load(resourcePathTrans);
@@ -56,6 +58,8 @@ namespace Visual_Novel.Scenery
         public override void ExecuteCommand(TransitionTween BGSceneTween)
         {
             BGSceneTween.RemoveAll();
+            BGSceneTween.NodeActive.Modulate = new Color(1, 1, 1, 1);
+            BGSceneTween.NodeTransitionary.Modulate = new Color(1, 1, 1, 0);
 
             // Assuming nodeB is a TextureRect
             ((TextureRect)BGSceneTween.NodeTransitionary).Texture = BGSceneTween.BlackTexture;

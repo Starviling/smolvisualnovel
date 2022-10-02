@@ -1,11 +1,7 @@
 using Godot;
-using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Visual_Novel.Lines;
-using Visual_Novel.Scenery;
 using Visual_Novel.Textbox;
-//using Visual_Novel.Textbox;
 
 public class UserInterface : CanvasLayer
 {
@@ -33,14 +29,23 @@ public class UserInterface : CanvasLayer
         dialogueBox = GetNode<DialogueUI>(DialogueUIName);
         instructions = TextParser.ParseFile(instructionsFilePath);
         indexInstruction = 0;
+        NextLine();
     }
 
+    private PackedScene MainMenuScene = ResourceLoader.Load<PackedScene>("res://Visual Novel/Main Menu.tscn");
+
+    /// <summary>
+    /// Runs the next line available
+    /// </summary>
     public void NextLine()
     {
-        if (indexInstruction >= instructions.Count)
-            // TODO: Handle completion of a file
-            return;
-        LineInformation nextLine = instructions[indexInstruction];
+        LineInformation nextLine = null;
+        if (indexInstruction < instructions.Count)
+            nextLine = instructions[indexInstruction];
+        else
+            GetTree().ChangeSceneTo(MainMenuScene);
+        // TODO: Implement else for file completion/nextfile
+
         // Access parsed information and emit signals based on parsed instructions
         if (dialogueBox.ReadyToDeliver())
         {

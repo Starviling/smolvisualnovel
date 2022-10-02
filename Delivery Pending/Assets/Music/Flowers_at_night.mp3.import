@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Flowers_at_night.mp3-25421e21e4c5673ec73c6a925472deed.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Flowers_at_night.mp3"
+dest_files=[ "res://.import/Flowers_at_night.mp3-25421e21e4c5673ec73c6a925472deed.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

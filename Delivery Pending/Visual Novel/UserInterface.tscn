@@ -1,16 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Visual Novel/Textbox/DialogueUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Visual Novel/Scenery/BGScene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Visual Novel/UserInterface.cs" type="Script" id=3]
+[ext_resource path="res://Visual Novel/Audio/AudioPlayer.tscn" type="PackedScene" id=4]
 
 [node name="UserInterface" type="CanvasLayer"]
 script = ExtResource( 3 )
-instructionsFilePath = "res://Assets/Instructions/test.json"
+instructionsFilePath = "res://Assets/Instructions/vntext.json"
+
+[node name="AudioPlayer" parent="." instance=ExtResource( 4 )]
 
 [node name="BGScene" parent="." instance=ExtResource( 2 )]
 
 [node name="DialogueUI" parent="." instance=ExtResource( 1 )]
 
+[connection signal="NextInstructionSignal" from="." to="AudioPlayer" method="NextLineInstruction"]
 [connection signal="NextInstructionSignal" from="." to="BGScene" method="NextLineInstruction"]
 [connection signal="NextInstructionSignal" from="." to="DialogueUI" method="NextLineInstruction"]

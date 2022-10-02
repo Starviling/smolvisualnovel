@@ -14,17 +14,14 @@ public class BGScene : Node2D
         bGSceneTween = GetNode<TransitionTween>(BGSceneTweenName);
     }
 
+    /// <summary>
+    /// Receiving end of signal - called by source to execute command from a given line.
+    /// </summary>
+    /// <param name="line">The line currently active.</param>
     public void NextLineInstruction(LineInformation line)
     {
-        GD.Print("Test");
         if (line == null)
-        {
-            GD.Print("NULL");
-        }
-        if (line.sceneEffectCommand == null)
-        {
-            GD.Print("Scene NULL");
-        }
-        line.sceneEffectCommand?.ExecuteCommand(bGSceneTween);
+            return;
+        line.SceneCommand?.ExecuteCommand(bGSceneTween);
     }
 }
